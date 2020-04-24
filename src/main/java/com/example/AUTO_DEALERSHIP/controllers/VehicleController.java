@@ -20,22 +20,14 @@ public class VehicleController {
 
     @RequestMapping("/")
     public ModelAndView doHome() {
-        ModelAndView mv = new ModelAndView("index");
+        ModelAndView mv = new ModelAndView("vehicle");
         mv.addObject("vehiclelist", vehicleRepo.findAll());
         return mv;
     }
 
 
-    @RequestMapping(value = "/edit/{vehicleid}", method = RequestMethod.GET)
-    public ModelAndView edit(@PathVariable("vehicleid") String vehicleid){
-        ModelAndView mv = new ModelAndView("edit");
-        Optional<VehicleData> vehicle = vehicleRepo.findById(vehicleid);
-        VehicleData vehicleToMap = vehicle.get();
-        mv.addObject("selecteditem",vehicleToMap);
-        return mv;
-    }
 
-    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    @RequestMapping(value = "/vehicle-save", method = RequestMethod.POST)
     public ModelAndView save(@RequestParam ("vehicleid") String vehicleid, @RequestParam("vehiclemake") String vehiclemake, @RequestParam ("vehiclemodel") String vehiclemodel,
                             @RequestParam ("vehicleyear") int vehicleyear, @RequestParam ("vehiclevin") String vehiclevin, @RequestParam ("vehiclecolor") String vehiclecolor,
                             @RequestParam ("vehiclemileage") int vehiclemileage,@RequestParam ("vehicleprice") int vehicleprice) {
@@ -62,7 +54,7 @@ public class VehicleController {
             return mv;
 
     }
-    @RequestMapping (value="/delete/", method = RequestMethod.GET)
+    @RequestMapping (value="/vehicle-delete/", method = RequestMethod.GET)
     public ModelAndView delete(@PathVariable("vehicleid") String vehicleid){
         ModelAndView mv = new ModelAndView("redirect:/");
         vehicleRepo.deleteById(vehicleid);

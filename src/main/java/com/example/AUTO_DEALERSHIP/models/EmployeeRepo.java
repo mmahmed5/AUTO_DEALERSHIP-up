@@ -1,4 +1,6 @@
 package com.example.AUTO_DEALERSHIP.models;
 
-public interface EmployeeRepo {
+import org.springframework.data.repository.CrudRepository;
+
+public interface EmployeeRepo extends CrudRepository<EmployeeData, String> {
 }

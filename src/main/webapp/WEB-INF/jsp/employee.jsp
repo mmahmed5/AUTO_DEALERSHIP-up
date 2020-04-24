@@ -1,0 +1,65 @@
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SpringBoot</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            width: 150px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+
+<h2>HTML Table</h2>
+
+<table>
+    <tr>
+        <th>Employee First Name</th>
+        <th>Employee Last Name</th>
+        <th>Employee Hire Date</th>
+        <th>Employee Last Date</th>
+
+    </tr>
+    <c:forEach var = "listitem" items = "${employeelist}}">
+        <tr>
+            <td>${listitem.getFirstname()}</td>
+            <td>${listitem.getLastname()}</td>
+            <td>${listitem.getHiredate()}</td>
+            <td>${listitem.getLastdate()}</td>
+
+
+        </tr>
+    </c:forEach>
+</table>
+<form method="post" action="/save-employee">
+    <input type="hidden" name="employeeid" value="">
+    Make:<br>
+    <input type = "text" name = "firstname">
+    <br>
+    Model:<br>
+    <input type="text" name="lastname">
+    <br>
+    <input  type="text" name="hiredate">
+    <br>
+    <input  type="text" name="lastdate">
+    <br><br>
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
+
