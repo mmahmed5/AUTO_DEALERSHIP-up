@@ -35,36 +35,46 @@
         <th>Vehicle Color</th>
         <th>Vehicle Mileage</th>
         <th>Vehicle Price</th>
-        <th>Vehicle Availability</th>
+
     </tr>
     <c:forEach var = "listitem" items = "${vehiclelist}">
         <tr>
-            <td>${listitem.getVehicleMake()}</td>
-            <td>${listitem.getVehicleModel()}</td>
-            <td>${listitem.getVehicleYear()}</td>
-            <td>${listitem.getVehicleVIN()}</td>
-            <td>${listitem.getVehicleVIN()}</td>
-            <td>${listitem.getVehicleColor()}</td>
-            <td>${listitem.getVehicleMileage()}</td>
-            <td>${listitem.getVehiclePrice()}</td>
-            <td>${listitem.getVehicleAvailabilty()}</td>
+            <td>${listitem.getVehiclemake()}</td>
+            <td>${listitem.getVehiclemodel()}</td>
+            <td>${listitem.getVehicleyear()}</td>
+            <td>${listitem.getVehiclevin()}</td>
+            <td>${listitem.getVehiclecolor()}</td>
+            <td>${listitem.getVehiclemileage()}</td>
+            <td>${listitem.getVehicleprice()}</td>
+
             <td>
-                <a href="/view/${listitem.getId()}">View</a>
-                <a href="/edit/${listitem.getId()}">Edit</a>
-                <a href="/delete/${listitem.getId()}"><img src="../../img/delete.jpg" alt="delete_image" ></a>
+                <a href="/edit/${listitem.getVehicleid()}">Edit</a>
+                <a href="/delete/${listitem.getVehicleid()}"></a>
             </td>
+
         </tr>
     </c:forEach>
 </table>
 <form method="post" action="/save">
     <input type="hidden" name="vehicleid" value="">
     Make:<br>
-    <textarea row = "15" cols ="15" type = "text" name = "vehiclemake">${vehiclemake}</textarea>
+    <input type = "text" name = "vehiclemake">
     <br>
     Model:<br>
-    <textarea row="15" cols = "15" type="text" name="vehiclemodel">${vehiclemodel}</textarea>
+    <input type="text" name="vehiclemodel">
+    <br>
+    <input  type="text" name="vehicleyear">
+    <br>
+    <input  type="text" name="vehiclevin">
+    <br>
+    <input type="text" name="vehiclecolor">
+    <br>
+    <input type="text" name="vehiclemileage">
+    <br>
+    <input type="text" name="vehicleprice">
+
     <br><br>
-    <input type="submit" value="Save">
+    <input type="submit" value="Submit">
 </form>
 
 </body>

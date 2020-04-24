@@ -1,13 +1,16 @@
 package com.example.AUTO_DEALERSHIP.models;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name="vehicledata")
 public class VehicleData {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="vehicleid")
-    private Long vehicleid;
+    private String  vehicleid;
     @Column(name = "vehiclemake")
     public String vehiclemake;
     @Column(name = "vehiclemodel")
@@ -22,14 +25,13 @@ public class VehicleData {
     public int vehiclemileage;
     @Column(name = "vehicleprice")
     public int vehicleprice;
-    @Column(name = "vehicleavail")
-    public boolean vehicleavail;
+
 
     public VehicleData() {
     }
 
-    public VehicleData(String vehicleid, String vehiclemake, String vehiclemodel, int vehicleyear,
-                       String vehiclevin, String vehiclecolor, int vehiclemileage, int vehicleprice, boolean vehicleavail) {
+    public VehicleData(String  vehicleid, String vehiclemake, String vehiclemodel, int vehicleyear,
+                       String vehiclevin, String vehiclecolor, int vehiclemileage, int vehicleprice) {
         this.vehicleid = vehicleid;
         this.vehiclemake = vehiclemake;
         this.vehiclemodel = vehiclemodel;
@@ -38,11 +40,11 @@ public class VehicleData {
         this.vehiclecolor = vehiclecolor;
         this.vehiclemileage = vehiclemileage;
         this.vehicleprice = vehicleprice;
-        this.vehicleavail = vehicleavail;
+
     }
 
 
-    public String  getVehicleid() {
+    public String   getVehicleid() {
         return vehicleid;
     }
 
@@ -106,18 +108,12 @@ public class VehicleData {
         this.vehicleprice = vehicleprice;
     }
 
-    public boolean isVehicleavail() {
-        return vehicleavail;
-    }
 
-    public void setVehicleavail(boolean vehicleavail) {
-        this.vehicleavail = vehicleavail;
-    }
 
     @Override
     public String toString() {
-        return "Employee [vehicleid=" +  vehicleid + ", vehiclemake=" + vehiclemake + ", vehiclemodel=" + vehiclemodel + ", vehicleyear=" + vehicleyear + ", vehiclevin="
-                + vehiclevin + ", vehiclecolor=" + vehiclecolor + ", vehiclemileage=" + vehiclemileage + ", vehiclemodel=" + vehiclemodel"]";
+        return "Employee [vehicleid=" + vehicleid + ", vehiclemake=" + vehiclemake + ", vehiclemodel=" + vehiclemodel + ", vehicleyear=" + vehicleyear + ", vehiclevin="
+                + vehiclevin + ", vehiclecolor=" + vehiclecolor + ", vehiclemileage=" + vehiclemileage + ", vehiclemodel=" + vehiclemodel;
 
-
+    }
 }
