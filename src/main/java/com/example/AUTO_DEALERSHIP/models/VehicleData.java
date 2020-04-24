@@ -5,8 +5,9 @@ import javax.persistence.*;
 @Table(name="vehicledata")
 public class VehicleData {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="vehicleid")
-    private String vehicleid;
+    private Long vehicleid;
     @Column(name = "vehiclemake")
     public String vehiclemake;
     @Column(name = "vehiclemodel")
@@ -17,7 +18,7 @@ public class VehicleData {
     public String vehiclevin;
     @Column(name = "vehiclecolor")
     public String vehiclecolor;
-    @Column(name = "vehiclenileage")
+    @Column(name = "vehiclemileage")
     public int vehiclemileage;
     @Column(name = "vehicleprice")
     public int vehicleprice;
@@ -112,6 +113,11 @@ public class VehicleData {
     public void setVehicleavail(boolean vehicleavail) {
         this.vehicleavail = vehicleavail;
     }
+
+    @Override
+    public String toString() {
+        return "Employee [vehicleid=" +  vehicleid + ", vehiclemake=" + vehiclemake + ", vehiclemodel=" + vehiclemodel + ", vehicleyear=" + vehicleyear + ", vehiclevin="
+                + vehiclevin + ", vehiclecolor=" + vehiclecolor + ", vehiclemileage=" + vehiclemileage + ", vehiclemodel=" + vehiclemodel"]";
 
 
 }
