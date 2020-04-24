@@ -32,7 +32,9 @@ public class CustomerController {
         CustomerData customerToSave;
         if(!Customerid.isEmpty()){
             Optional<CustomerData> customer = customerRepo.findById(Customerid);
+
             customerToSave =customer.get();
+
         }
         else {
             customerToSave = new CustomerData();
