@@ -137,14 +137,17 @@
 </head>
 <body>
 
-<h2>HTML Table</h2>
 <div class="view">
+
+<h2>Employees</h2>
+    <fieldset>
 <table>
     <tr>
         <th>Employee First Name</th>
         <th>Employee Last Name</th>
         <th>Employee Hire Date</th>
         <th>Employee Last Date</th>
+        <th>Action</th>
 
 
     </tr>
@@ -154,25 +157,34 @@
             <td>${listitem.getEmployeelastname()}</td>
             <td>${listitem.getEmployeehiredate()}</td>
             <td>${listitem.getEmployeelastdate()}</td>
+            <td>
+            <a href="/employee-delete/${listitem.getEmployeeid()}">Delete</a>
+
+            </td>
         </tr>
     </c:forEach>
-</div>
 </table>
+</fieldset>
+</div>
+<div class="addnew">
+    <h2>Add New</h2>
+<fieldset>
+
 <form method="post" action="/save-employee">
     <input type="hidden" name="employeeid" value="">
     First Name:<br>
-    <input type = "text" name = "employeefirstname">
+    <input type = "text" name = "employeefirstname"><br>
+    Last Name:<br>
+    <input type="text" name="employeelastname"><br>
+    Hire Date:<br>
+    <input  type="text" name="employeehiredate"><br>
+    Last Date:<br>
+    <input  type="text" name="employeelastdate"><br>
     <br>
-    Last name:<br>
-    <input type="text" name="employeelastname">
-    <br>
-    <input  type="text" name="employeehiredate">
-    <br>
-    <input  type="text" name="employeelastdate">
-    <br><br>
     <input type="submit" value="Submit">
 </form>
-
+</fieldset>
+</div>
 </body>
 </html>
 

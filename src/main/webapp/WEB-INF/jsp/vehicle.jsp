@@ -136,6 +136,7 @@
     </style>
 </head>
 <body>
+
 <div class="view">
 
 <h2>Vehicles</h2>
@@ -165,7 +166,7 @@
             <td>
 
                 <a href="/vehicle-delete/${listitem.getVehicleid()}">Delete</a>
-                <a href="/update/${listitem.getVehicleid()}">Update</a>
+
             </td>
 
         </tr>

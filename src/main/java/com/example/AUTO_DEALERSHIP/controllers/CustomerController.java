@@ -63,7 +63,12 @@ public class CustomerController {
         mv.addObject("customerlist",customerRepo.findAll());
         return mv;
     }
-
+    @RequestMapping (value="/customer-delete/{customerid}", method = RequestMethod.GET)
+    public ModelAndView delete(@PathVariable("customerid") String customerid){
+        ModelAndView mv = new ModelAndView("redirect:/customer");
+        customerRepo.deleteById(customerid);
+        return mv;
+    }
 }
 
 

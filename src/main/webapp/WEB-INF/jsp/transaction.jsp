@@ -93,15 +93,15 @@
 
             overflow-x:auto;
             padding: 10px;
-            width: 70%;
+            width: 100%;
             height: auto;
-            float: right;
+            float: left;
 
 
         }
 
         input[type=text], select, input[type=number] {
-            width: 70%;
+            width: 25%;
             padding: 10px 10px;
             margin: 8px 0;
             display: inline-block;
@@ -125,9 +125,8 @@
             background-color: lightsteelblue;
         }
 
-        lable {
-            color: whitesmoke;
-        }
+
+
 
         fieldset {
             background-color: whitesmoke;
@@ -135,30 +134,35 @@
 
     </style>
 </head>
-
 <h2>Transactions</h2>
+<div class="view">
+<label style="color: whitesmoke;">Enter Receipt Number </label>
+
 <form method="post" action="/findtransaction">
     <input type="text" name="receipt">
     <br>
     <input type="submit" value="Submit">
 </form>
+<fieldset>
 <table>
     <tr>
-        <th>Reciept Number</th>
-        <th>Customer</th>
+        <th>Receipt Number</th>
         <th>Salesperson</th>
+        <th>Customer</th>
         <th>Vehicle</th>
         <th>Amount</th>
-        <th>Receipt #</th>
+
     </tr>
     <tr>
         <td>${transactiondata.getReceipt()}</td>
         <td>${employeedata.getEmployeeid()}</td>
         <td>${customerdata.getCustomerid()}</td>
         <td>${vehicledata.getVehicleid()}</td>
+        <td>${vehicledata.getVehicleid()}</td>
 
     </tr>
 </table>
-
+</fieldset>
+</div>
 </body>
 </html>

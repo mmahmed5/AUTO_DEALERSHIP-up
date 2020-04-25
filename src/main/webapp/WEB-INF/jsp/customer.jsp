@@ -137,9 +137,9 @@
 
 </head>
 <body>
-
-<h2>HTML Table</h2>
-
+<div class="view">
+<h2>Customers</h2>
+<fieldset>
 <table>
     <tr>
         <th>Customer First Name</th>
@@ -148,6 +148,7 @@
         <th>Vehicle Purchased Model</th>
         <th>Date Purchased</th>
         <th>Sales Person</th>
+
 
 
     </tr>
@@ -159,30 +160,41 @@
             <td>${listitem.getPurchasedmodel()}</td>
             <td>${listitem.getDatepurchased()}</td>
             <td>${listitem.getSalesperson()}</td>
+            <td>
+                <a href="/customer-delete/${listitem.getCustomerid()}">Delete</a>
+
+            </td>
         </tr>
     </c:forEach>
 </table>
+</fieldset>
+</div>
+<div class="addnew">
+    <h2>Add New</h2>
+    <fieldset>
+
+
 <form method="post" action="/save-customer">
     <input type="hidden" name="customerid" value="">
+    First Name::<br>
+    <input type = "text" name = "customerfirstname"><br>
+    Last Name:<br>
+    <input type="text" name="customerlastname"><br>
     Make:<br>
-    <input type = "text" name = "customerfirstname">
-    <br>
+    <input  type="text" name="purchasedmake"><br>
     Model:<br>
-    <input type="text" name="customerlastname">
-    <br>
-    <input  type="text" name="purchasedmake">
-    <br>
-    <input  type="text" name="purchasedmodel">
-    <br>
-    <input type="text" name="datepurchased">
-    <br>
+    <input  type="text" name="purchasedmodel"><br>
+    Date:<br>
+    <input type="text" name="datepurchased"><br>
+    Salesperson:<br>
     <input type="text" name="salesperson">
 
 
     <br><br>
     <input type="submit" value="Submit">
 </form>
-
+    </fieldset>
+</div>
 </body>
 </html>
 
