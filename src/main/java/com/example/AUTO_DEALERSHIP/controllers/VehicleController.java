@@ -18,7 +18,7 @@ public class VehicleController {
     @Autowired
     VehicleRepo vehicleRepo;
 
-    @RequestMapping("/")
+    @RequestMapping("/vehicle")
     public ModelAndView doHome() {
         ModelAndView mv = new ModelAndView("vehicle");
         mv.addObject("vehiclelist", vehicleRepo.findAll());
