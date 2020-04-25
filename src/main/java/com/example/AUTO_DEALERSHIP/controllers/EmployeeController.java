@@ -3,8 +3,10 @@ package com.example.AUTO_DEALERSHIP.controllers;
 
 import com.example.AUTO_DEALERSHIP.models.EmployeeData;
 import com.example.AUTO_DEALERSHIP.models.EmployeeRepo;
+import com.example.AUTO_DEALERSHIP.models.VehicleData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,6 +24,15 @@ public class EmployeeController {
     public ModelAndView doHome() {
         ModelAndView mv = new ModelAndView("employee");
         mv.addObject("employeelist", employeeRepo.findAll());
+        return mv;
+    }
+
+    @RequestMapping( value = "/employeeview/{employeeid}", method = RequestMethod.GET)
+    public ModelAndView view(@PathVariable("employeeid") String employeeid){
+        ModelAndView mv = new ModelAndView("employeeview");
+        Optional<EmployeeData> person = employeeRepo.findById(employeeid);
+        EmployeeData employeeToMap = person.get();
+        mv.addObject("selectedItem", employeeToMap);
         return mv;
     }
     @RequestMapping(value = "/save-employee", method = RequestMethod.POST)

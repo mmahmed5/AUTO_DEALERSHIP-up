@@ -8,11 +8,11 @@
 
     <div class="mainmenu">
 
-        <a href="${pageContext.request.contextPath}/index.jsp"> Home </a>
-        <a href="${pageContext.request.contextPath}/vehicle.jsp"> Vehicles </a>
-        <a href="${pageContext.request.contextPath}/customer.jsp> Customers </a>
-
-        <a href="${pageContext.request.contextPath}/transaction.jsp">Transactions </a>
+        <a href="/index/"${listitem.getIndexid()}> Home </a>
+        <a href="/vehicle/"${listitem.getVehicleid()}">Vehicle</a>
+        <a href="/customer/"${listitem.getCustomerid()}"> Customers </a>
+        <a href="/employee/"${listitem.getEmployeeid()}> Employees </a>
+        <a href="/transaction/"${listitem.getTransactionid()}>Transactions </a>
 
     </div>
 

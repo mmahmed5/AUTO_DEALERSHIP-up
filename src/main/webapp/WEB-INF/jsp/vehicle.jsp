@@ -6,6 +6,15 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
+    <div class="mainmenu">
+
+        <a href="/index/"${listitem.getIndexid()}> Home </a>
+        <a href="/vehicle/"${listitem.getVehicleid()}">Vehicle</a>
+        <a href="/customer/"${listitem.getCustomerid()}"> Customers </a>
+        <a href="/employee/"${listitem.getEmployeeid()}> Employees </a>
+        <a href="/transaction/"${listitem.getTransactionid()}>Transactions </a>
+
+    </div>
 
     <b></b>
     <style>
@@ -40,16 +49,20 @@
             background-color: lightslategray;
         }
         table {
-            font-family: arial, sans-serif;
+            font-family: Helvetica, sans-serif;
             border-collapse: collapse;
             width: 100%;
+            padding: 20px;
+            border-bottom-color: darkgray;
+            background-color: lightsteelblue;
         }
 
         td, th {
-            border: 1px solid #dddddd;
+            border-bottom-color: lightsteelblue;
             text-align: left;
-            padding: 8px;
+            padding: 5px;
             width: 150px;
+
         }
 
         tr:nth-child(even) {
@@ -59,7 +72,7 @@
 </head>
 <body>
 
-<h2>HTML Table</h2>
+<h2>Vehicles</h2>
 
 <table>
     <tr>

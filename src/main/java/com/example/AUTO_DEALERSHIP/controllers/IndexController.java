@@ -1,5 +1,6 @@
 package com.example.AUTO_DEALERSHIP.controllers;
 
+import com.example.AUTO_DEALERSHIP.models.CustomerData;
 import com.example.AUTO_DEALERSHIP.models.VehicleData;
 import com.example.AUTO_DEALERSHIP.models.VehicleRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,18 @@ public class IndexController {
         ModelAndView mv = new ModelAndView("index");
         return mv;
     }
+
+
+    @RequestMapping( value = "/indexview/{indexid}", method = RequestMethod.GET)
+    public ModelAndView view(@PathVariable("indexid") String indexid) {
+        ModelAndView mv = new ModelAndView("indexview");
+
+        return mv;
     }
+
+}
+
+
 
 
 

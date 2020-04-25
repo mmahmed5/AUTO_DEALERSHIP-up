@@ -8,11 +8,11 @@
 
     <div class="mainmenu">
 
-        <a href="${pageContext.request.contextPath}/jsp/index.jsp"> Home </a>
-        <a href="${pageContext.request.contextPath}vehicle.jsp"> Vehicles </a>
-        <a class="active" href="${pageContext.request.contextPath}/jsp/customer.jsp"> Customers </a>
-        <a href="${pageContext.request.contextPath}employee.jsp"> Employees </a>
-        <a href="${pageContext.request.contextPath}transaction.jsp">Transactions </a>
+        <a href="/index/"${listitem.getIndexid()}> Home </a>
+        <a href="/vehicle/"${listitem.getVehicleid()}">Vehicle</a>
+        <a href="/customer/"${listitem.getCustomerid()}"> Customers </a>
+        <a href="/employee/"${listitem.getEmployeeid()}> Employees </a>
+        <a href="/transaction/"${listitem.getTransactionid()}>Transactions </a>
 
     </div>
 
@@ -49,16 +49,20 @@
             background-color: lightslategray;
         }
         table {
-            font-family: arial, sans-serif;
+            font-family: Helvetica, sans-serif;
             border-collapse: collapse;
             width: 100%;
+            padding: 20px;
+            border-bottom-color: darkgray;
+            background-color: lightsteelblue;
         }
 
         td, th {
-            border: 1px solid #dddddd;
+            border-bottom-color: lightsteelblue;
             text-align: left;
-            padding: 8px;
+            padding: 5px;
             width: 150px;
+
         }
 
         tr:nth-child(even) {
@@ -66,3 +70,58 @@
         }
     </style>
 </head>
+
+<h2>Transactions</h2>
+
+<table>
+    <tr>
+        <th>Date</th>
+        <th>Customer</th>
+        <th>Salesperson</th>
+        <th>Vehicle</th>
+        <th>Amount</th>
+        <th>Receipt #</th>
+
+
+    </tr>
+    <c:forEach var = "listitem" items = "${transactionlist}">
+        <tr>
+            <td>${listitem.getVehiclemake()}</td>
+            <td>${listitem.getVehiclemodel()}</td>
+            <td>${listitem.getVehicleyear()}</td>
+            <td>${listitem.getVehiclevin()}</td>
+            <td>${listitem.getVehiclecolor()}</td>
+            <td>${listitem.getVehiclemileage()}</td>
+            <td>${listitem.getVehicleprice()}</td>
+
+            <td>
+                <a href="/delete/${listitem.getVehicleid()}"></a>
+            </td>
+
+        </tr>
+    </c:forEach>
+</table>
+<form method="post" action="/vehicle-save">
+    <input type="hidden" name="vehicleid" value="">
+    Make:<br>
+    <input type = "text" name = "vehiclemake">
+    <br>
+    Model:<br>
+    <input type="text" name="vehiclemodel">
+    <br>
+    <input  type="text" name="vehicleyear">
+    <br>
+    <input  type="text" name="vehiclevin">
+    <br>
+    <input type="text" name="vehiclecolor">
+    <br>
+    <input type="text" name="vehiclemileage">
+    <br>
+    <input type="text" name="vehicleprice">
+
+    <br><br>
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

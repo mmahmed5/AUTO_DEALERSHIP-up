@@ -8,11 +8,11 @@
 
     <div class="mainmenu">
 
-        <a href="/index/${pageContext.request.contextPath}"> Home </a>
-        <a href="/vehicle/${listitem.getVehicleid()}">Vehicle</a>
-        <a href="/customer/"${listitem.getCustomerid()}"> Customers </a>
+        <a href="/index/"${listitem.getIndexid()}> Home </a>
+        <a href="/vehicle/"${listitem.getVehicleid()}>Vehicle</a>
+        <a href="/customer/"${listitem.getCustomerid()}> Customers </a>
         <a href="/employee/"${listitem.getEmployeeid()}> Employees </a>
-        <a href="/transaction.jsp"${listitem.getTransactionid()}>Transactions </a>
+        <a href="/transaction/"${listitem.getTransactionid()}>Transactions </a>
 
     </div>
 
@@ -66,3 +66,5 @@
         }
     </style>
 </head>
+
+<h1>TEST</h1>
