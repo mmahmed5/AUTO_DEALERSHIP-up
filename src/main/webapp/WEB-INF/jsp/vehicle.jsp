@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    title>Car Dealership</title>
+    <title>Car Dealership</title>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
     <div class="mainmenu">
 
-        <a href="/index/"${listitem.getIndexid()}> Home </a>
+        <a href="${pageContext.request.contextPath}/"> Home </a>
         <a href="/vehicle/"${listitem.getVehicleid()}">Vehicle</a>
         <a href="/customer/"${listitem.getCustomerid()}"> Customers </a>
         <a href="/employee/"${listitem.getEmployeeid()}> Employees </a>
@@ -97,7 +97,7 @@
             <td>${listitem.getVehicleprice()}</td>
 
             <td>
-                <a href="/index/${pageContext.request.contextPath}"> Home </a>
+
                 <a href="/delete/${listitem.getVehicleid()}"></a>
             </td>
 

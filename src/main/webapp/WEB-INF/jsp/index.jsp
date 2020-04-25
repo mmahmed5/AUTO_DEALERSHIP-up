@@ -8,7 +8,7 @@
 
     <div class="mainmenu">
 
-        <a href="/index/"${listitem.getIndexid()}> Home </a>
+        <a href="${pageContext.request.contextPath}"> Home </a>
         <a href="/vehicle/"${listitem.getVehicleid()}>Vehicle</a>
         <a href="/customer/"${listitem.getCustomerid()}> Customers </a>
         <a href="/employee/"${listitem.getEmployeeid()}> Employees </a>
