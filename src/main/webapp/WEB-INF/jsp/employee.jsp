@@ -2,22 +2,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    title>Car Dealership</title>
+    <title>Car Dealership</title>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
     <div class="mainmenu">
 
-        <a href="/index/"${listitem.getIndexid()}> Home </a>
+        <a href="${pageContext.request.contextPath}/"> Home </a>
         <a href="/vehicle/"${listitem.getVehicleid()}">Vehicle</a>
         <a href="/customer/"${listitem.getCustomerid()}"> Customers </a>
-        <a href="/employee/"${listitem.getEmployeeid()}> Employees </a>
+        <a class="active" href="/employee/"${listitem.getEmployeeid()}> Employees </a>
         <a href="/transaction/"${listitem.getTransactionid()}>Transactions </a>
 
     </div>
 
     <b></b>
     <style>
+        html {
+            background-color: lightslategrey;
+        }
 
         .mainmenu {
             width: 100%;
@@ -49,35 +52,100 @@
             background-color: lightslategray;
         }
         table {
-            font-family: arial, sans-serif;
+            font-family: Helvetica, sans-serif;
             border-collapse: collapse;
             width: 100%;
+            padding: 20px;
+            border-bottom-color: darkgray;
+
         }
 
         td, th {
-            border: 1px solid #dddddd;
+            border-bottom-color: lightsteelblue;
             text-align: left;
-            padding: 8px;
+            padding: 5px;
             width: 150px;
+
         }
 
         tr:nth-child(even) {
             background-color: #dddddd;
         }
-    </style>
 
+        /* format for the add new section div */
+
+        h2{
+            color: whitesmoke;
+        }
+        .addnew {
+
+            padding: 10px;
+            width: 25%;
+            height: auto;
+            float: left;
+
+
+        }
+
+        /* format for the view/table section div*/
+
+        .view {
+
+            overflow-x:auto;
+            padding: 10px;
+            width: 70%;
+            height: auto;
+            float: right;
+
+
+        }
+
+        input[type=text], select, input[type=number] {
+            width: 70%;
+            padding: 10px 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid darkslategray;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 25%;
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: lightsteelblue;
+        }
+
+        lable {
+            color: whitesmoke;
+        }
+
+        fieldset {
+            background-color: whitesmoke;
+        }
+
+    </style>
 </head>
 <body>
 
 <h2>HTML Table</h2>
-
+<div class="view">
 <table>
     <tr>
         <th>Employee First Name</th>
         <th>Employee Last Name</th>
         <th>Employee Hire Date</th>
         <th>Employee Last Date</th>
-        <a href="/index/${pageContext.request.contextPath}"> Home </a>
+
 
     </tr>
     <c:forEach var = "listitem" items = "${employeelist}">
@@ -88,6 +156,7 @@
             <td>${listitem.getEmployeelastdate()}</td>
         </tr>
     </c:forEach>
+</div>
 </table>
 <form method="post" action="/save-employee">
     <input type="hidden" name="employeeid" value="">
