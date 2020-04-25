@@ -9,25 +9,26 @@ public class EmployeeData {
     @Id
     @Column(name="employeeid")
     private String employeeid;
-    @Column(name="firstname")
-    public String firstname;
-    @Column(name="lastname")
-    public String lastname;
-    @Column(name="hiredate")
-    public int hiredate;
-    @Column(name="lastdate")
-    public int lastdate;
+    @Column(name="employeefirstname")
+    public String employeefirstname;
+    @Column(name="employeelastname")
+    public String employeelastname;
+    @Column(name="employeehiredate")
+    public int employeehiredate;
+    @Column(name="employeelastdate")
+    public int employeelastdate;
 
     public EmployeeData(){
 
     }
-    public EmployeeData (String employeeid, String firstname, String lastname, int hiredate, int lastdate)
+    public EmployeeData (String employeeid, String employeefirstname, String employeelastname, int employeehiredate,
+                         int employeelastdate)
     {
         this.employeeid = employeeid;
-        this.firstname=firstname;
-        this.lastname = lastname;
-        this.hiredate = hiredate;
-        this.lastdate = lastdate;
+        this.employeefirstname=employeefirstname;
+        this.employeelastname = employeelastname;
+        this.employeehiredate = employeehiredate;
+        this.employeelastdate = employeelastdate;
     }
 
     public String getEmployeeid() {
@@ -38,35 +39,35 @@ public class EmployeeData {
         this.employeeid = employeeid;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getEmployeefirstname() {
+        return employeefirstname;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setEmployeefirstname(String employeefirstname) {
+        this.employeefirstname = employeefirstname;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getEmployeelastname() {
+        return employeelastname;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setEmployeelastname(String employeelastname) {
+        this.employeelastname = employeelastname;
     }
 
-    public int getHiredate() {
-        return hiredate;
+    public int getEmployeehiredate() {
+        return employeehiredate;
     }
 
-    public void setHiredate(int hiredate) {
-        this.hiredate = hiredate;
+    public void setEmployeehiredate(int employeehiredate) {
+        this.employeehiredate = employeehiredate;
     }
 
-    public int getLastdate() {
-        return lastdate;
+    public int getEmployeelastdate() {
+        return employeelastdate;
     }
 
-    public void setLastdate(int lastdate) {
-        this.lastdate = lastdate;
+    public void setEmployeelastdate(int employeelastdate) {
+        this.employeelastdate = employeelastdate;
     }
 }

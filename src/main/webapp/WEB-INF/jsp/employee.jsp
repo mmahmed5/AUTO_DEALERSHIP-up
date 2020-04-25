@@ -77,30 +77,29 @@
         <th>Employee Last Name</th>
         <th>Employee Hire Date</th>
         <th>Employee Last Date</th>
+        <a href="/index/${pageContext.request.contextPath}"> Home </a>
 
     </tr>
-    <c:forEach var = "listitem" items = "${employeelist}}">
+    <c:forEach var = "listitem" items = "${employeelist}">
         <tr>
-            <td>${listitem.getFirstname()}</td>
-            <td>${listitem.getLastname()}</td>
-            <td>${listitem.getHiredate()}</td>
-            <td>${listitem.getLastdate()}</td>
-
-
+            <td>${listitem.getEmployeefirstname()}</td>
+            <td>${listitem.getEmployeelastname()}</td>
+            <td>${listitem.getEmployeehiredate()}</td>
+            <td>${listitem.getEmployeelastdate()}</td>
         </tr>
     </c:forEach>
 </table>
 <form method="post" action="/save-employee">
     <input type="hidden" name="employeeid" value="">
-    Make:<br>
-    <input type = "text" name = "firstname">
+    First Name:<br>
+    <input type = "text" name = "employeefirstname">
     <br>
-    Model:<br>
-    <input type="text" name="lastname">
+    Last name:<br>
+    <input type="text" name="employeelastname">
     <br>
-    <input  type="text" name="hiredate">
+    <input  type="text" name="employeehiredate">
     <br>
-    <input  type="text" name="lastdate">
+    <input  type="text" name="employeelastdate">
     <br><br>
     <input type="submit" value="Submit">
 </form>

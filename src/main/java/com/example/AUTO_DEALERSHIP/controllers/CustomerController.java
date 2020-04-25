@@ -18,12 +18,11 @@ public class CustomerController {
     CustomerRepo customerRepo;
 
     @RequestMapping("/customer")
-    public ModelAndView doHome(){
-        ModelAndView mv = new ModelAndView("customer"); //Is it going to be customer or index?
+    public ModelAndView doHome() {
+        ModelAndView mv = new ModelAndView("customer");
         mv.addObject("customerlist", customerRepo.findAll());
         return mv;
     }
-
     @RequestMapping(value = "/save-customer", method = RequestMethod.POST)
     public ModelAndView save(@RequestParam("customerid") String Customerid, @RequestParam("customerfirstname") String Customerfirstname, @RequestParam("customerlastname") String Customerlastname,
                              @RequestParam("purchasedmake") String Purchasedmake, @RequestParam("purchasedmodel") String Purchasedmodel, @RequestParam("datepurchased") int Datepurchased,

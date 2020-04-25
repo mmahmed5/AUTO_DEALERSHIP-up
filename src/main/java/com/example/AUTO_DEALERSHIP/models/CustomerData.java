@@ -2,6 +2,7 @@ package com.example.AUTO_DEALERSHIP.models;
 
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name="customerdata")
@@ -22,7 +23,7 @@ public class CustomerData {
     public int datepurchased;
     @Column(name="salesperson")
     public String salesperson;
-
+    
     public CustomerData(){
 
     }

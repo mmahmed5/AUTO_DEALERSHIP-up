@@ -1,5 +1,6 @@
 package com.example.AUTO_DEALERSHIP.controllers;
 
+import com.example.AUTO_DEALERSHIP.models.EmployeeRepo;
 import com.example.AUTO_DEALERSHIP.models.VehicleData;
 import com.example.AUTO_DEALERSHIP.models.VehicleRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,6 @@ import java.util.UUID;
 public class VehicleController {
     @Autowired
     VehicleRepo vehicleRepo;
-
     @RequestMapping("/vehicle")
     public ModelAndView doHome() {
         ModelAndView mv = new ModelAndView("vehicle");
@@ -25,6 +25,15 @@ public class VehicleController {
         return mv;
     }
 
+
+    @RequestMapping( value = "/vehicleview/{vehicleid}", method = RequestMethod.GET)
+    public ModelAndView view(@PathVariable("vehicleid") String vehicleid){
+        ModelAndView mv = new ModelAndView("vehicleview");
+        Optional<VehicleData> person = vehicleRepo.findById(vehicleid);
+        VehicleData vehicleToMap = person.get();
+        mv.addObject("selectedItem", vehicleToMap);
+        return mv;
+    }
 
 
     @RequestMapping(value = "/vehicle-save", method = RequestMethod.POST)

@@ -6,15 +6,6 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
-    <div class="mainmenu">
-
-        <a href="${pageContext.request.contextPath}/index.jsp"> Home </a>
-        <a href="${pageContext.request.contextPath}/vehicle.jsp"> Vehicles </a>
-        <a class="active" href="${pageContext.request.contextPath}/customer.jsp"> Customers </a>
-        <a href="${pageContext.request.contextPath}/employee.jsp"> Employees </a>
-        <a href="${pageContext.request.contextPath}/transaction.jsp">Transactions </a>
-
-    </div>
 
     <b></b>
     <style>
@@ -79,6 +70,7 @@
         <th>Vehicle Color</th>
         <th>Vehicle Mileage</th>
         <th>Vehicle Price</th>
+        <th>Action</th>
 
     </tr>
     <c:forEach var = "listitem" items = "${vehiclelist}">
@@ -92,6 +84,7 @@
             <td>${listitem.getVehicleprice()}</td>
 
             <td>
+                <a href="/index/${pageContext.request.contextPath}"> Home </a>
                 <a href="/delete/${listitem.getVehicleid()}"></a>
             </td>
 

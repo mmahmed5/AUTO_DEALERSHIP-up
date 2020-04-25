@@ -2,17 +2,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    title>Car Dealership</title>
+    <title>Car Dealership</title>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
     <div class="mainmenu">
 
-        <a href="${pageContext.request.contextPath}index.jsp"> Home </a>
-        <a href="${pageContext.request.contextPath}vehicle.jsp"> Vehicles </a>
-        <a class="active" href="${pageContext.request.contextPath}/jsp/customer.jsp"> Customers </a>
-        <a href="${pageContext.request.contextPath}/employee.jsp"> Employees </a>
-        <a href="${pageContext.request.contextPath}/transaction.jsp">Transactions </a>
+        <a href="/index/${pageContext.request.contextPath}"> Home </a>
+        <a href="/vehicle/${listitem.getVehicleid()}">Vehicle</a>
+        <a href="/customer/"${listitem.getCustomerid()}"> Customers </a>
+        <a href="/employee/"${listitem.getEmployeeid()}> Employees </a>
+        <a href="/transaction.jsp"${listitem.getTransactionid()}>Transactions </a>
 
     </div>
 
