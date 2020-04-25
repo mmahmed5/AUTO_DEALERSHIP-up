@@ -41,7 +41,7 @@ public class VehicleController {
     public ModelAndView save(@RequestParam ("vehicleid") String vehicleid, @RequestParam("vehiclemake") String vehiclemake, @RequestParam ("vehiclemodel") String vehiclemodel,
                             @RequestParam ("vehicleyear") int vehicleyear, @RequestParam ("vehiclevin") String vehiclevin, @RequestParam ("vehiclecolor") String vehiclecolor,
                             @RequestParam ("vehiclemileage") int vehiclemileage,@RequestParam ("vehicleprice") int vehicleprice) {
-            ModelAndView mv = new ModelAndView("redirect:/");
+            ModelAndView mv = new ModelAndView("redirect:/vehicle");
             VehicleData vehicleToSave;
             if(!vehicleid.isEmpty()){
                 Optional<VehicleData> users = vehicleRepo.findById(vehicleid);
