@@ -64,9 +64,9 @@ public class VehicleController {
             return mv;
 
     }
-    @RequestMapping (value="/vehicle-delete/", method = RequestMethod.GET)
+    @RequestMapping (value="/vehicle-delete/{vehicleid}", method = RequestMethod.GET)
     public ModelAndView delete(@PathVariable("vehicleid") String vehicleid){
-        ModelAndView mv = new ModelAndView("redirect:/");
+        ModelAndView mv = new ModelAndView("redirect:/vehicle");
         vehicleRepo.deleteById(vehicleid);
         return mv;
     }

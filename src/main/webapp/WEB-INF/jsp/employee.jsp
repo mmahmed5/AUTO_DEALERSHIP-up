@@ -138,14 +138,14 @@
 <body>
 
 <h2>HTML Table</h2>
-
+<div class="view">
 <table>
     <tr>
         <th>Employee First Name</th>
         <th>Employee Last Name</th>
         <th>Employee Hire Date</th>
         <th>Employee Last Date</th>
-        <a href="/index/${pageContext.request.contextPath}"> Home </a>
+
 
     </tr>
     <c:forEach var = "listitem" items = "${employeelist}">
@@ -156,6 +156,7 @@
             <td>${listitem.getEmployeelastdate()}</td>
         </tr>
     </c:forEach>
+</div>
 </table>
 <form method="post" action="/save-employee">
     <input type="hidden" name="employeeid" value="">

@@ -164,7 +164,8 @@
 
             <td>
 
-                <a href="/delete/${listitem.getVehicleid()}"></a>
+                <a href="/vehicle-delete/${listitem.getVehicleid()}">Delete</a>
+                <a href="/update/${listitem.getVehicleid()}">Update</a>
             </td>
 
         </tr>
@@ -173,6 +174,7 @@
     </fieldset>
 </div>
 <div class="addnew">
+    <h2>Add New</h2>
 <form method="post" action="/vehicle-save">
     <fieldset>
     <input type="hidden" name="vehicleid" value="">

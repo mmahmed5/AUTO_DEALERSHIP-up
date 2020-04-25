@@ -135,5 +135,8 @@
 
     </style>
 </head>
-
-<h1>TEST</h1>
+<fieldset>
+<div style="text-align: center; font-size: x-large">
+<h1>Cougar Auto</h1>
+</div>
+</fieldset>
