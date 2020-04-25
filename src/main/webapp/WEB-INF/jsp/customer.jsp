@@ -138,63 +138,58 @@
 </head>
 <body>
 <div class="view">
-<h2>Customers</h2>
-<fieldset>
-<table>
-    <tr>
-        <th>Customer First Name</th>
-        <th>Customer Last Name</th>
-        <th>Vehicle Purchased Make</th>
-        <th>Vehicle Purchased Model</th>
-        <th>Date Purchased</th>
-        <th>Sales Person</th>
+    <h2>Customers</h2>
+    <fieldset>
+        <table>
+            <tr>
+                <th>Customer First Name</th>
+                <th>Customer Last Name</th>
+                <th>Vehicle Purchased Make</th>
+                <th>Vehicle Purchased Model</th>
+                <th>Date Purchased</th>
+                <th>Sales Person</th>
 
 
 
-    </tr>
-    <c:forEach var = "listitem" items = "${customerlist}">
-        <tr>
-            <td>${listitem.getCustomerfirstname()}</td>
-            <td>${listitem.getCustomerlastname()}</td>
-            <td>${listitem.getPurchasedmake()}</td>
-            <td>${listitem.getPurchasedmodel()}</td>
-            <td>${listitem.getDatepurchased()}</td>
-            <td>${listitem.getSalesperson()}</td>
-            <td>
-                <a href="/customer-delete/${listitem.getCustomerid()}">Delete</a>
+            </tr>
+            <c:forEach var = "listitem" items = "${customerlist}">
+                <tr>
+                    <td>${listitem.getCustomerfirstname()}</td>
+                    <td>${listitem.getCustomerlastname()}</td>
+                    <td>${listitem.getPurchasedmake()}</td>
+                    <td>${listitem.getPurchasedmodel()}</td>
+                    <td>${listitem.getDatepurchased()}</td>
+                    <td>${listitem.getSalesperson()}</td>
 
-            </td>
-        </tr>
-    </c:forEach>
-</table>
-</fieldset>
+                    <td>
+                        <a href="/customer-delete/${listitem.getCustomerid()}">Delete</a>
+                    </td>
+                </tr>
+            </c:forEach>
+        </table>
+    </fieldset>
 </div>
 <div class="addnew">
     <h2>Add New</h2>
-    <fieldset>
-
-
-<form method="post" action="/save-customer">
-    <input type="hidden" name="customerid" value="">
-    First Name::<br>
-    <input type = "text" name = "customerfirstname"><br>
-    Last Name:<br>
-    <input type="text" name="customerlastname"><br>
-    Make:<br>
-    <input  type="text" name="purchasedmake"><br>
-    Model:<br>
-    <input  type="text" name="purchasedmodel"><br>
-    Date:<br>
-    <input type="text" name="datepurchased"><br>
-    Salesperson:<br>
-    <input type="text" name="salesperson">
-
-
-    <br><br>
-    <input type="submit" value="Submit">
-</form>
-    </fieldset>
+    <form method="post" action="/customer-save">
+        <fieldset>
+            <input type="hidden" name="customerid" value="">
+            First Name::<br>
+            <input type = "text" name = "customerfirstname"><br>
+            Last Name:<br>
+            <input type="text" name="customerlastname"><br>
+            Make:<br>
+            <input  type="text" name="purchasedmake"><br>
+            Model:<br>
+            <input  type="text" name="purchasedmodel"><br>
+            Date:<br>
+            <input type="text" name="datepurchased"><br>
+            Salesperson:<br>
+            <input type="text" name="salesperson">
+            <br><br>
+            <input type="submit" value="Submit">
+        </fieldset>
+    </form>
 </div>
 </body>
 </html>
-

@@ -59,6 +59,7 @@ public class EmployeeController {
         mv.addObject("employeelist",employeeRepo.findAll());
         return mv;
     }
+
     @RequestMapping (value="/employee-delete/{employeeid}", method = RequestMethod.GET)
     public ModelAndView delete(@PathVariable("employeeid") String employeeid){
         ModelAndView mv = new ModelAndView("redirect:/employee");
@@ -67,4 +68,5 @@ public class EmployeeController {
 
 
     }
+
 }
